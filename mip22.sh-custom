@@ -521,7 +521,7 @@ ngrok_start_customize() {
 
 	{ sleep 9; clear; header; }
 	
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+	ngrok_url=$(curl -s -N http://0.0.0.0:80/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 	ngrok_url1=${ngrok_url#https://}
 	
     url_short=$(curl -s 'https://is.gd/create.php?format=simple&url='"$ngrok_url1")
